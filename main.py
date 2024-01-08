@@ -50,7 +50,7 @@ def decode(key:str,path:str='.'):
     f.extractall()
     f.close()
 def version():
-    print('v1.0.0-beta')
+    print('v1.0.1-beta')
 if __name__=='__main__':
     print("""
 ______          _   
