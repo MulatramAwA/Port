@@ -1,4 +1,5 @@
 # Port!A encoder/decoder of a high-secure zip file.
+![GitHub License](https://img.shields.io/github/license/MulatramAwA/Port)
 # &emsp;&emsp;Install:
 ## &emsp;&emsp;&emsp;&emsp;1.Install Anaconda3
 ## &emsp;&emsp;&emsp;&emsp;2.`pip install -r requestments.txt`
