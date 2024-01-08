@@ -49,6 +49,8 @@ def decode(key:str,path:str='.'):
     f=zipfile.ZipFile('./.port','r')
     f.extractall()
     f.close()
+def version():
+    print('v1.0.0-beta')
 if __name__=='__main__':
     print("""
 ______          _   
