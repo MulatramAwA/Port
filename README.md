@@ -4,6 +4,7 @@
 ## &emsp;&emsp;&emsp;&emsp;1.Install Anaconda3
 ## &emsp;&emsp;&emsp;&emsp;2.`pip install -r requestments.txt`
 # &emsp;&emsp;Use:
+## &emsp;&emsp;&emsp;&emsp;`python main.py version` to show version.
 ## &emsp;&emsp;&emsp;&emsp;`python main.py update KEY PATH` to encode all file in folder
 ## &emsp;&emsp;&emsp;&emsp;`python main.py decode KEY PATH` to decode it.
 ## &emsp;&emsp;&emsp;&emsp;`python main.py upload URL TOKEN` to upload into server.
