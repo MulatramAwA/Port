@@ -17,12 +17,12 @@ def download(url:str):
             if not chunk:
                 break
             f.write(chunk)
-def update(key:str):
+def update(key:str,path:str='.'):
     AES_key=int('0x'+hashlib.md5(key.encode('UTF-8')).hexdigest(),base=16)
     AES_key=AES_key.to_bytes(16)
     aes=AES.new(AES_key,AES.MODE_ECB)
-    f=zipfile.ZipFile('./.port','w')
-    for folderName,subFolders,fileNames in os.walk('./'):
+    f=zipfile.ZipFile(path+'/.port','w')
+    for folderName,subFolders,fileNames in os.walk(path):
         for filename in fileNames:
             if filename=='.port':
                 continue
@@ -36,18 +36,26 @@ def update(key:str):
     f=open('./.port','wb')
     f.write(encrypted)
     f.close()
-def decode(key:str):
+def decode(key:str,path:str='.'):
     AES_key=int('0x'+hashlib.md5(key.encode('UTF-8')).hexdigest(),base=16)
     AES_key=AES_key.to_bytes(16)
     aes=AES.new(AES_key,AES.MODE_ECB)
-    f=open('./.port','rb')
+    f=open(path+'/.port','rb')
     decrypted=unpad(aes.decrypt(f.read()),16)
     f.close()
-    f=open('./.port','wb')
+    f=open(path+'/.port','wb')
     f.write(decrypted)
     f.close()
     f=zipfile.ZipFile('./.port','r')
     f.extractall()
     f.close()
 if __name__=='__main__':
+    print("""
+______          _   
+| ___ \        | |  
+| |_/ /__  _ __| |_ 
+|  __/ _ \| '__| __|
+| | | (_) | |  | |_ 
+\_|  \___/|_|   \__
+    """)
     fire.Fire({'upload':upload,'download':download,'update':update,'decode':decode})
